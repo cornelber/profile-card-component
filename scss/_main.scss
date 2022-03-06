@@ -1,0 +1,115 @@
+// Main Styles
+body {
+  font-family: $font-family;
+  font-size: 18px;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark-cyan;
+  &::after {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background-image: url(../img/bg-pattern-top.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(-1) scaleY(-1);
+  }
+  &::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    background-image: url(../img/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+      background: $white;
+      border-radius: 10px;
+      z-index: 1;
+      box-shadow: 0 10px 40px -10px $very-dark-blue;
+      @media screen and (max-width: 375px) {
+        margin: 0 10px;
+      }
+      &::after {
+        content: "";
+        background-image: url(" ../img/bg-pattern-card.svg ");
+        background-repeat: no-repeat;
+        width: 350px;
+        height: 140px;
+        position: absolute;
+        border-radius: 10px 10px 0 0;
+        z-index: 2;
+        @media screen and (max-width: 375px) {
+          display: none;
+        }
+      }
+      &__img {
+        margin: 90px auto 0;
+        z-index: 3;
+        border: 5px solid $white;
+        border-radius: 100%;
+        @media screen and (max-width: 375px) {
+          margin: 20px auto 0;
+        }
+        img {
+          border-radius: 100%;
+        }
+      }
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        h1 {
+          font-weight: 700;
+          color: $very-dark-blue;
+          margin-bottom: 10px;
+          span {
+            color: $dark-grayish-blue;
+            font-weight: 500;
+          }
+        }
+        p {
+          font-size: 0.9rem;
+          font-weight: 400;
+          color: $dark-grayish-blue;
+        }
+      }
+      &__features {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px;
+        border-top: 1px solid $dark-gray-line;
+        .feature-group {
+          h1 {
+            font-weight: 700;
+          }
+          p {
+            margin-top: 10px;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            color: $dark-grayish-blue;
+          }
+        }
+      }
+    }
+  }
+}
